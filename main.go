@@ -58,7 +58,7 @@ func main() {
 	timer = time.Now()
 	t.VerifyTree()
 	elapsed = time.Since(timer)
-	log.Printf("Verifying all the tree %f seconds\n", elapsed.Seconds())
+	log.Printf("Deep verifying all the tree levels in %f seconds\n", elapsed.Seconds())
 
 	rand.Seed(time.Now().UTC().UnixNano())
 	r := rand.Intn(*n)

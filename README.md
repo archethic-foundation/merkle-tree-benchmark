@@ -1,11 +1,6 @@
 # Merkle Tree Benchmark
 
 This program provide a benchmark tool to returns metrics about a merkle tree.
-The metrics are:
-
-- How many seconds to build a merkle tree within N transactions
-- How many seconds to verify the merkle tree within N transactions
-- How many seconds to check if a transaction belongs to the merkle tree within N transactions
 
 ## How to use
 
@@ -15,7 +10,7 @@ go run main.go -n {NUMBER_OF_TRANSACTIONS}
 
 ## Benchmarks
 
-| Transactions number |Tree building|Tree verifying|Transaction existing|
+| Transactions number |Tree building|Deep tree verifying (validates the hashes at each level of the tree and compare with the root of the tree matches) |Verify transaction integrity (calculate on the critical path and compare with the merkle tree root)|
 |:-|:-|:-|:-|
 | 1000 | 0.001405 seconds | 0.001922 seconds | 0.000040 seconds |
 | 10000 | 0.013499 seconds | 0.020007 seconds | 0.000330 seconds |
